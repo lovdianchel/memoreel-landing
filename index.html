@@ -1183,13 +1183,13 @@
           <div class="loading-spinner"></div>
           <div class="loading-text">Memuat demo...</div>
         </div>
-        <iframe src="https://birthday.web.id" class="demo-iframe" id="heroIframe"
-          title="Demo Memoreel — Website Game Interaktif" loading="lazy" allow="autoplay"
-          sandbox="allow-scripts allow-same-origin allow-forms"
+        <iframe src="./game/" class="demo-iframe" id="heroIframe" title="Demo Memoreel — Website Game Interaktif"
+          loading="lazy" allow="autoplay" sandbox="allow-scripts allow-same-origin allow-forms"
           onload="document.getElementById('heroLoader').classList.add('hidden')"></iframe>
       </div>
       <p class="demo-hint">Gunakan <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> untuk bergerak &nbsp;·&nbsp;
-        <kbd>SPACE</kbd> untuk berinteraksi</p>
+        <kbd>SPACE</kbd> untuk berinteraksi
+      </p>
     </div>
   </section>
 
@@ -1214,9 +1214,8 @@
             <div class="loading-spinner"></div>
             <div class="loading-text">Memuat demo...</div>
           </div>
-          <iframe src="https://birthday.web.id"
-            style="display:block;width:100%;height:520px;border:none;border-radius:8px;" title="Demo Memoreel"
-            id="demoIframe" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"
+          <iframe src="./game/" style="display:block;width:100%;height:520px;border:none;border-radius:8px;"
+            title="Demo Memoreel" id="demoIframe" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"
             onload="document.getElementById('demoLoader').classList.add('hidden')"></iframe>
         </div>
         <p class="demo-hint" style="margin-top:16px;font-size:12px;">
@@ -1428,42 +1427,42 @@
   </footer>
 
   <script>
-// Navbar scroll
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
+    // Navbar scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
 
-// Hamburger
-document.getElementById('hamburger').onclick = () => document.getElementById('mobileOverlay').classList.add('open');
-document.getElementById('mobileClose').onclick = () => document.getElementById('mobileOverlay').classList.remove('open');
+    // Hamburger
+    document.getElementById('hamburger').onclick = () => document.getElementById('mobileOverlay').classList.add('open');
+    document.getElementById('mobileClose').onclick = () => document.getElementById('mobileOverlay').classList.remove('open');
 
-// Scroll reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// FAQ
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.parentElement;
-    const ans = item.querySelector('.faq-a');
-    const open = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-a').style.maxHeight = '0';
+    // FAQ
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const ans = item.querySelector('.faq-a');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-a').style.maxHeight = '0';
+        });
+        if (!open) {
+          item.classList.add('open');
+          ans.style.maxHeight = ans.scrollHeight + 'px';
+        }
+      });
     });
-    if (!open) {
-      item.classList.add('open');
-      ans.style.maxHeight = ans.scrollHeight + 'px';
-    }
-  });
-});
 
-// Iframe focus fix — click to allow keyboard input
-document.querySelectorAll('.demo-iframe, iframe').forEach(frame => {
-  frame.addEventListener('mouseenter', () => frame.focus());
-  frame.parentElement.addEventListener('click', () => frame.focus());
-});
+    // Iframe focus fix — click to allow keyboard input
+    document.querySelectorAll('.demo-iframe, iframe').forEach(frame => {
+      frame.addEventListener('mouseenter', () => frame.focus());
+      frame.parentElement.addEventListener('click', () => frame.focus());
+    });
   </script>
 </body>
 
