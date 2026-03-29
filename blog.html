@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Memoreel — Tips Hadiah, Kenangan & Momen Spesial</title>
+    <meta name="description"
+        content="Temukan inspirasi hadiah berkesan, tips merayakan momen spesial, dan cerita kenangan indah di Blog Memoreel.">
+    <meta name="keywords"
+        content="hadiah berkesan, kado ulang tahun, anniversary gift, memoreel, hadiah digital, kenangan, momen spesial">
+    <meta name="author" content="Memoreel">
+    <link rel="canonical" href="https://memoreel.id/blog">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Memoreel">
+    <meta property="og:title" content="Blog Memoreel — Tips Hadiah, Kenangan & Momen Spesial">
+    <meta property="og:description"
+        content="Inspirasi hadiah berkesan, tips merayakan momen spesial, dan cerita kenangan indah dari Memoreel.">
+    <meta property="og:url" content="https://memoreel.id/blog">
+    <meta property="og:image" content="https://memoreel.id/og-blog.jpg">
+    <meta property="og:locale" content="id_ID">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog Memoreel — Tips Hadiah, Kenangan & Momen Spesial">
+    <meta name="twitter:description"
+        content="Inspirasi hadiah berkesan, tips merayakan momen spesial, dan cerita kenangan indah dari Memoreel.">
+    <meta name="twitter:image" content="https://memoreel.id/og-blog.jpg">
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Blog Memoreel","description":"Inspirasi hadiah berkesan, tips merayakan momen spesial.","url":"https://memoreel.id/blog","publisher":{"@type":"Organization","name":"Memoreel"}}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"https://memoreel.id/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://memoreel.id/blog"}]}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --ivory: #FDFAF5;
+            --warm-white: #FFF8EE;
+            --parchment: #F2EBD9;
+            --dark: #1E1A14;
+            --brown: #3D2E1E;
+            --rose: #C4614A;
+            --rose-light: #F0C4B8;
+            --rose-pale: #FDF0EC;
+            --gold: #C9962A;
+            --gold-pale: #FBF4E3;
+            --sage: #6B7B5E;
+            --muted: #8A7A6A;
+            --border: #E2D8CC;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--ivory);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 56px;
+            background: rgba(253, 250, 245, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        nav.scrolled {
+            border-bottom-color: var(--border);
+        }
+
+        .nav-logo {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 21px;
+            color: var(--rose);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--rose);
+        }
+
+        .nav-btn {
+            background: var(--rose);
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 24px;
+            border: none;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            background: #B05540;
+            transform: translateY(-1px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--brown);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--ivory);
+            z-index: 99;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+        }
+
+        .mobile-overlay.open {
+            display: flex;
+        }
+
+        .mobile-overlay a {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: var(--brown);
+            text-decoration: none;
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            font-size: 24px;
+            color: var(--rose);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-bar {
+            padding: 96px 56px 0;
+            max-width: 1192px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--muted);
+        }
+
+        .breadcrumb a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--rose);
+        }
+
+        .breadcrumb-current {
+            color: var(--rose);
+        }
+
+        /* BLOG HERO */
+        .blog-hero {
+            padding: 40px 56px 48px;
+            max-width: 1192px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: end;
+            gap: 40px;
+        }
+
+        .chip {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--rose-light);
+        }
+
+        .blog-hero h1 {
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.2;
+            color: var(--brown);
+            margin-bottom: 14px;
+        }
+
+        .blog-hero-sub {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--muted);
+            max-width: 520px;
+        }
+
+        .blog-post-count {
+            font-size: 13px;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .blog-post-count strong {
+            color: var(--brown);
+            font-weight: 600;
+        }
+
+        /* FILTER BAR */
+        .filter-bar {
+            padding: 0 56px 40px;
+            max-width: 1192px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .search-wrap {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 380px;
+            padding: 11px 40px 11px 16px;
+            border: 1px solid var(--border);
+            background: var(--ivory);
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            color: var(--dark);
+            border-radius: 2px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--rose);
+        }
+
+        .search-input::placeholder {
+            color: var(--muted);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: max(calc(100% - 380px + 12px), 12px);
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: var(--muted);
+            pointer-events: none;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            background: var(--ivory);
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--rose);
+            color: var(--rose);
+        }
+
+        .filter-tab.active {
+            background: var(--rose);
+            border-color: var(--rose);
+            color: white;
+        }
+
+        .filter-tab .tab-count {
+            background: rgba(0, 0, 0, 0.12);
+            border-radius: 20px;
+            padding: 1px 7px;
+            font-size: 10px;
+        }
+
+        .filter-tab.active .tab-count {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* ── MAIN LAYOUT: sidebar kanan, posts+pagination kiri ── */
+        .blog-layout {
+            max-width: 1192px;
+            margin: 0 auto;
+            padding: 48px 56px 80px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            grid-template-rows: auto auto;
+            gap: 0 64px;
+            align-items: start;
+        }
+
+        /* Posts section occupies row 1 col 1 */
+        .posts-section {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        /* Pagination occupies row 2 col 1 — below posts, above sidebar bottom */
+        .pagination-wrap {
+            grid-column: 1;
+            grid-row: 2;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        /* Sidebar spans both rows on the right */
+        .blog-sidebar {
+            grid-column: 2;
+            grid-row: 1 / 3;
+            position: sticky;
+            top: 88px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* POST GRID */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        /* Featured post */
+        .post-card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--border);
+            transition: transform 0.25s, box-shadow 0.25s;
+            background: var(--ivory);
+        }
+
+        .post-card.featured:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(30, 26, 20, 0.1);
+        }
+
+        .post-card.featured .post-img-wrap {
+            overflow: hidden;
+        }
+
+        .post-card.featured .post-img {
+            height: 100%;
+            min-height: 280px;
+            object-fit: cover;
+            display: block;
+            width: 100%;
+            transition: transform 0.5s;
+        }
+
+        .post-card.featured:hover .post-img {
+            transform: scale(1.03);
+        }
+
+        .post-card.featured .post-body {
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Regular post card */
+        .post-card {
+            border: 1px solid var(--border);
+            background: var(--ivory);
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(30, 26, 20, 0.1);
+        }
+
+        .post-img-wrap {
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+            background: var(--parchment);
+        }
+
+        .post-card:hover .post-img {
+            transform: scale(1.04);
+        }
+
+        /* Image placeholder when src fails */
+        .post-img-placeholder {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--parchment) 0%, var(--rose-pale) 100%);
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .post-img-placeholder .placeholder-icon {
+            font-size: 28px;
+        }
+
+        .post-card.featured .post-img-placeholder {
+            height: 100%;
+            min-height: 280px;
+        }
+
+        .post-body {
+            padding: 24px 24px 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .post-cat {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--rose);
+            padding: 3px 9px;
+            border: 1px solid var(--rose-light);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .post-cat:hover {
+            background: var(--rose-pale);
+        }
+
+        .post-date {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .post-read-time {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .post-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--border);
+            flex-shrink: 0;
+        }
+
+        .post-title {
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.35;
+            color: var(--brown);
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .post-card.featured .post-title {
+            font-size: 24px;
+        }
+
+        .post-title:hover {
+            color: var(--rose);
+        }
+
+        .post-excerpt {
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--muted);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .post-read-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--rose);
+            text-decoration: none;
+            margin-top: auto;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+            width: fit-content;
+        }
+
+        .post-read-link:hover {
+            border-color: var(--rose);
+        }
+
+        .post-read-link-arrow {
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .post-read-link:hover .post-read-link-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Empty / no-results */
+        .empty-state {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .empty-title {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            color: var(--brown);
+            margin-bottom: 10px;
+        }
+
+        .empty-sub {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* PAGINATION */
+        .page-info {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .page-info strong {
+            color: var(--brown);
+            font-weight: 600;
+        }
+
+        /* Override: prevent global nav{} rule from affecting pagination */
+        .pagination {
+            position: static !important;
+            display: flex !important;
+            align-items: center;
+            gap: 6px;
+            background: transparent !important;
+            border: none !important;
+            backdrop-filter: none !important;
+            padding: 0 !important;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            padding: 0 10px;
+            border: 1px solid var(--border);
+            background: var(--ivory);
+            color: var(--muted);
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        .page-btn:hover:not(:disabled) {
+            border-color: var(--rose);
+            color: var(--rose);
+        }
+
+        .page-btn.active {
+            background: var(--rose);
+            border-color: var(--rose);
+            color: white;
+        }
+
+        .page-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+
+        .page-btn.prev,
+        .page-btn.next {
+            padding: 0 16px;
+            font-size: 12px;
+            letter-spacing: 0.02em;
+        }
+
+        .page-ellipsis {
+            color: var(--muted);
+            font-size: 14px;
+            padding: 0 4px;
+            line-height: 38px;
+        }
+
+        /* SIDEBAR */
+        .widget-title {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--brown);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--rose-light);
+        }
+
+        .popular-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .popular-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .popular-num {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 28px;
+            color: var(--rose);
+            opacity: 0.3;
+            line-height: 1;
+            flex-shrink: 0;
+            width: 24px;
+        }
+
+        .popular-title {
+            font-family: 'Lora', serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--brown);
+            text-decoration: none;
+            line-height: 1.4;
+            display: block;
+            margin-bottom: 4px;
+            transition: color 0.2s;
+        }
+
+        .popular-title:hover {
+            color: var(--rose);
+        }
+
+        .popular-meta {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .cat-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .cat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cat-item:last-child {
+            border-bottom: none;
+        }
+
+        .cat-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--muted);
+            transition: color 0.2s;
+        }
+
+        .cat-item:hover .cat-name {
+            color: var(--rose);
+        }
+
+        .cat-count {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--muted);
+            background: var(--parchment);
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .newsletter-widget {
+            background: var(--rose-pale);
+            border: 1px solid var(--rose-light);
+            padding: 28px 24px;
+        }
+
+        .newsletter-widget .widget-title {
+            color: var(--rose);
+            border-color: var(--rose-light);
+        }
+
+        .newsletter-sub {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .nl-input-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nl-input {
+            padding: 11px 14px;
+            border: 1px solid var(--rose-light);
+            background: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            color: var(--dark);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .nl-input:focus {
+            border-color: var(--rose);
+        }
+
+        .nl-input::placeholder {
+            color: var(--muted);
+        }
+
+        .nl-btn {
+            background: var(--rose);
+            color: white;
+            border: none;
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 11px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .nl-btn:hover {
+            background: #B05540;
+        }
+
+        .nl-note {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            padding: 5px 12px;
+            border: 1px solid var(--border);
+            background: var(--ivory);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .tag-pill:hover {
+            border-color: var(--rose);
+            color: var(--rose);
+            background: var(--rose-pale);
+        }
+
+        /* Loading skeleton */
+        .skeleton {
+            animation: shimmer 1.4s infinite;
+        }
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .skeleton-card {
+            border: 1px solid var(--border);
+            background: var(--ivory);
+        }
+
+        .skeleton-img {
+            width: 100%;
+            height: 200px;
+            background: var(--parchment);
+        }
+
+        .skeleton-body {
+            padding: 24px;
+        }
+
+        .skeleton-line {
+            height: 12px;
+            background: var(--parchment);
+            border-radius: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: rgba(253, 250, 245, 0.7);
+            padding: 56px 56px 32px;
+        }
+
+        .footer-row {
+            max-width: 1080px;
+            margin: 0 auto 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .footer-logo {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--rose);
+            margin-bottom: 8px;
+        }
+
+        .footer-tagline {
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: rgba(253, 250, 245, 0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--rose);
+        }
+
+        .footer-copy {
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.35;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 40px 0;
+            }
+
+            .posts-section {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .pagination-wrap {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .blog-sidebar {
+                grid-column: 1;
+                grid-row: 3;
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+
+            .newsletter-widget {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 24px;
+            }
+
+            .nav-links,
+            .nav-btn {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .breadcrumb-bar {
+                padding: 80px 24px 0;
+            }
+
+            .blog-hero {
+                padding: 24px 24px 32px;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .filter-bar {
+                padding: 0 24px 28px;
+            }
+
+            .blog-layout {
+                padding: 32px 24px 60px;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .post-card.featured {
+                grid-template-columns: 1fr;
+            }
+
+            .post-card.featured .post-img {
+                height: 220px;
+            }
+
+            .post-card.featured .post-body {
+                padding: 24px;
+            }
+
+            .pagination-wrap {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .blog-sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 40px 24px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <button class="mobile-close" id="mobileClose">✕</button>
+        <a href="index.html">Beranda</a>
+        <a href="index.html#how">Cara Kerja</a>
+        <a href="index.html#packages">Paket</a>
+        <a href="blog.html" style="color:var(--rose)">Blog</a>
+        <a href="index.html#faq">FAQ</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">Memoreel</a>
+        <ul class="nav-links">
+            <li><a href="index.html#how">Cara Kerja</a></li>
+            <li><a href="index.html#packages">Paket</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Memoreel%2C%20saya%20ingin%20memesan." class="nav-btn"
+            target="_blank">Pesan Sekarang</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Beranda</a>
+            <span style="opacity:.5;margin:0 4px">›</span>
+            <span class="breadcrumb-current">Blog</span>
+        </nav>
+    </div>
+
+    <!-- BLOG HERO -->
+    <div class="blog-hero">
+        <div>
+            <div class="chip">Jurnal & Inspirasi</div>
+            <h1>Cerita, Tips & <em style="font-style:italic;color:var(--rose)">Kenangan</em></h1>
+            <p class="blog-hero-sub">Inspirasi hadiah berkesan, tips merayakan momen spesial, dan kisah nyata dari
+                pelanggan Memoreel.</p>
+        </div>
+        <div class="blog-post-count" id="postCount"></div>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+        <div class="search-wrap">
+            <input type="search" class="search-input" id="searchInput" placeholder="Cari artikel..."
+                aria-label="Cari artikel">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="filter-tabs" id="filterTabs">
+            <button class="filter-tab active" data-cat="all">Semua <span class="tab-count"
+                    id="countAll">—</span></button>
+            <button class="filter-tab" data-cat="tips-hadiah">Tips Hadiah <span class="tab-count"
+                    id="countTips">—</span></button>
+            <button class="filter-tab" data-cat="inspirasi">Inspirasi <span class="tab-count"
+                    id="countInspirasi">—</span></button>
+            <button class="filter-tab" data-cat="kenangan">Kenangan <span class="tab-count"
+                    id="countKenangan">—</span></button>
+            <button class="filter-tab" data-cat="panduan">Panduan <span class="tab-count"
+                    id="countPanduan">—</span></button>
+        </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <main class="blog-layout">
+
+        <!-- POSTS SECTION (col 1 row 1) -->
+        <section class="posts-section" aria-label="Daftar Artikel">
+            <div class="posts-grid" id="postsGrid">
+                <!-- Loading skeletons -->
+                <div class="skeleton-card skeleton" style="grid-column:1/-1">
+                    <div class="skeleton-img"></div>
+                    <div class="skeleton-body">
+                        <div class="skeleton-line" style="width:30%"></div>
+                        <div class="skeleton-line" style="width:80%"></div>
+                        <div class="skeleton-line" style="width:60%"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card skeleton">
+                    <div class="skeleton-img"></div>
+                    <div class="skeleton-body">
+                        <div class="skeleton-line" style="width:30%"></div>
+                        <div class="skeleton-line" style="width:85%"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card skeleton">
+                    <div class="skeleton-img"></div>
+                    <div class="skeleton-body">
+                        <div class="skeleton-line" style="width:30%"></div>
+                        <div class="skeleton-line" style="width:75%"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="noResults" style="display:none">
+                <div class="empty-state">
+                    <div class="empty-icon">🔍</div>
+                    <h2 class="empty-title">Artikel tidak ditemukan</h2>
+                    <p class="empty-sub">Coba kata kunci lain atau pilih kategori yang berbeda.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGINATION (col 1 row 2) — BELOW posts, OUTSIDE grid -->
+        <div class="pagination-wrap" id="paginationWrap" style="display:none">
+            <div class="page-info" id="pageInfo"></div>
+            <div class="pagination" id="pagination" role="navigation" aria-label="Navigasi halaman"></div>
+        </div>
+
+        <!-- SIDEBAR (col 2, spans rows 1-2) -->
+        <aside class="blog-sidebar" aria-label="Sidebar Blog">
+            <div class="sidebar-widget reveal">
+                <h2 class="widget-title">Artikel Populer</h2>
+                <div class="popular-list" id="popularList">
+                    <div class="skeleton skeleton-line" style="height:50px;width:100%"></div>
+                    <div class="skeleton skeleton-line" style="height:50px;width:100%"></div>
+                    <div class="skeleton skeleton-line" style="height:50px;width:100%"></div>
+                </div>
+            </div>
+            <div class="sidebar-widget reveal" style="transition-delay:0.1s">
+                <h2 class="widget-title">Kategori</h2>
+                <div class="cat-list" id="catList"></div>
+            </div>
+            <div class="sidebar-widget newsletter-widget reveal" style="transition-delay:0.2s">
+                <h2 class="widget-title">💌 Dapatkan Inspirasi</h2>
+                <p class="newsletter-sub">Tip hadiah berkesan & promo eksklusif langsung ke emailmu. Gratis setiap
+                    minggu.</p>
+                <div class="nl-input-wrap">
+                    <input type="email" class="nl-input" id="nlEmail" placeholder="emailmu@gmail.com"
+                        aria-label="Email newsletter">
+                    <button class="nl-btn" id="nlBtn">Langganan Gratis</button>
+                </div>
+                <p class="nl-note">Tanpa spam. Berhenti kapan saja.</p>
+            </div>
+            <div class="sidebar-widget reveal" style="transition-delay:0.3s">
+                <h2 class="widget-title">Tag Populer</h2>
+                <div class="tags-cloud" id="tagsCloud"></div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-row">
+            <div>
+                <div class="footer-logo">Memoreel</div>
+                <div class="footer-tagline">Hadiah yang dirasakan.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">TikTok</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <p class="footer-copy">© 2025 Memoreel · Surabaya, Indonesia</p>
+    </footer>
+
+    <script>
+        // ══════════════════════════════════════════════
+        // CONFIG
+        // ══════════════════════════════════════════════
+        const POSTS_PER_PAGE = 6;
+        const POSTS_JSON_URL = './posts.json';
+
+        // Fallback gradient covers per category (shown when image fails to load)
+        const CAT_COLORS = {
+            'tips-hadiah': 'linear-gradient(135deg,#FDF0EC,#F0C4B8)',
+            'inspirasi': 'linear-gradient(135deg,#FBF4E3,#EDD9A3)',
+            'kenangan': 'linear-gradient(135deg,#EEF2EB,#C8D9BE)',
+            'panduan': 'linear-gradient(135deg,#F2EBD9,#E2D8CC)',
+        };
+        const CAT_ICONS = { 'tips-hadiah': '🎁', 'inspirasi': '✨', 'kenangan': '💛', 'panduan': '📖' };
+
+        // ══════════════════════════════════════════════
+        // STATE
+        // ══════════════════════════════════════════════
+        let POSTS_DATA = [];
+        let state = { page: 1, category: 'all', query: '' };
+
+        // ══════════════════════════════════════════════
+        // IMAGE FALLBACK HANDLER
+        // ── Called via onerror on each <img>
+        // ══════════════════════════════════════════════
+        function imgFallback(img, category) {
+            const bg = CAT_COLORS[category] || 'linear-gradient(135deg,var(--parchment),var(--rose-pale))';
+            const icon = CAT_ICONS[category] || '📷';
+            const wrap = img.parentElement;
+            wrap.style.background = bg;
+            img.style.display = 'none';
+            const ph = document.createElement('div');
+            ph.className = 'post-img-placeholder';
+            ph.innerHTML = `<span class="placeholder-icon">${icon}</span><span>Gambar tidak tersedia</span>`;
+            wrap.appendChild(ph);
+        }
+
+        // ══════════════════════════════════════════════
+        // FILTER HELPERS
+        // ══════════════════════════════════════════════
+        function filtered() {
+            let posts = [...POSTS_DATA];
+            if (state.category !== 'all') posts = posts.filter(p => p.category === state.category);
+            if (state.query) {
+                const q = state.query.toLowerCase();
+                posts = posts.filter(p =>
+                    p.title.toLowerCase().includes(q) ||
+                    p.excerpt.toLowerCase().includes(q) ||
+                    (p.tags || []).some(t => t.toLowerCase().includes(q))
+                );
+            }
+            return posts;
+        }
+
+        function totalPages(posts) { return Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE)); }
+        function pagePosts(posts) { const s = (state.page - 1) * POSTS_PER_PAGE; return posts.slice(s, s + POSTS_PER_PAGE); }
+        function countCat(cat) { return cat === 'all' ? POSTS_DATA.length : POSTS_DATA.filter(p => p.category === cat).length; }
+
+        // ══════════════════════════════════════════════
+        // RENDER — Post card HTML
+        // ══════════════════════════════════════════════
+        function cardHTML(post, isFeatured) {
+            const href = `blog-post.html?slug=${post.slug}`;
+            const imgSrc = post.image || '';
+            const imgTag = imgSrc
+                ? `<img src="${imgSrc}" alt="${post.imageAlt || ''}" class="post-img" loading="lazy" onerror="imgFallback(this,'${post.category}')">`
+                : `<div class="post-img-placeholder" style="background:${CAT_COLORS[post.category] || 'var(--parchment)'}"><span class="placeholder-icon">${CAT_ICONS[post.category] || '📷'}</span></div>`;
+
+            if (isFeatured) {
+                return `
+    <article class="post-card featured reveal" aria-label="${post.title}">
+      <div class="post-img-wrap">${imgTag}</div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-cat" data-cat="${post.category}">${post.categoryLabel}</span>
+          <span class="post-dot"></span>
+          <time class="post-date" datetime="${post.dateISO}">${post.date}</time>
+          <span class="post-dot"></span>
+          <span class="post-read-time">${post.readTime} baca</span>
+        </div>
+        <a href="${href}" class="post-title">${post.title}</a>
+        <p class="post-excerpt">${post.excerpt}</p>
+        <a href="${href}" class="post-read-link">Baca Selengkapnya <span class="post-read-link-arrow">→</span></a>
+      </div>
+    </article>`;
+            }
+            return `
+  <article class="post-card reveal" aria-label="${post.title}">
+    <div class="post-img-wrap">${imgTag}</div>
+    <div class="post-body">
+      <div class="post-meta">
+        <span class="post-cat" data-cat="${post.category}">${post.categoryLabel}</span>
+        <span class="post-dot"></span>
+        <time class="post-date" datetime="${post.dateISO}">${post.date}</time>
+        <span class="post-dot"></span>
+        <span class="post-read-time">${post.readTime}</span>
+      </div>
+      <a href="${href}" class="post-title">${post.title}</a>
+      <p class="post-excerpt">${post.excerpt}</p>
+      <a href="${href}" class="post-read-link">Baca <span class="post-read-link-arrow">→</span></a>
+    </div>
+  </article>`;
+        }
+
+        // ══════════════════════════════════════════════
+        // RENDER — Pagination
+        // ══════════════════════════════════════════════
+        function renderPagination(posts) {
+            const wrap = document.getElementById('paginationWrap');
+            const pageInfo = document.getElementById('pageInfo');
+            const paginationEl = document.getElementById('pagination');
+            const total = totalPages(posts);
+            const cur = state.page;
+
+            if (posts.length === 0) { wrap.style.display = 'none'; return; }
+            wrap.style.display = 'flex';
+
+            const start = (cur - 1) * POSTS_PER_PAGE + 1;
+            const end = Math.min(cur * POSTS_PER_PAGE, posts.length);
+            pageInfo.innerHTML = `Menampilkan <strong>${start}–${end}</strong> dari <strong>${posts.length}</strong> artikel`;
+
+            // Build page numbers with ellipsis
+            let nums = [];
+            if (total <= 7) {
+                for (let i = 1; i <= total; i++) nums.push(i);
+            } else {
+                nums.push(1);
+                if (cur > 3) nums.push('…');
+                const from = Math.max(2, cur - 1), to = Math.min(total - 1, cur + 1);
+                for (let i = from; i <= to; i++) nums.push(i);
+                if (cur < total - 2) nums.push('…');
+                nums.push(total);
+            }
+
+            paginationEl.innerHTML =
+                `<button class="page-btn prev" data-action="prev" ${cur === 1 ? 'disabled' : ''} aria-label="Halaman sebelumnya">← Prev</button>` +
+                nums.map(n => n === '…'
+                    ? `<span class="page-ellipsis">…</span>`
+                    : `<button class="page-btn${n === cur ? ' active' : ''}" data-page="${n}" aria-label="Halaman ${n}" ${n === cur ? 'aria-current="page"' : ''}>${n}</button>`
+                ).join('') +
+                `<button class="page-btn next" data-action="next" ${cur === total ? 'disabled' : ''} aria-label="Halaman berikutnya">Next →</button>`;
+
+            // Bind events
+            paginationEl.querySelectorAll('[data-page]').forEach(btn =>
+                btn.addEventListener('click', () => { state.page = parseInt(btn.dataset.page); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); })
+            );
+            paginationEl.querySelectorAll('[data-action]').forEach(btn =>
+                btn.addEventListener('click', () => {
+                    if (!btn.disabled) { btn.dataset.action === 'prev' ? state.page-- : state.page++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                })
+            );
+        }
+
+        // ══════════════════════════════════════════════
+        // RENDER — Main
+        // ══════════════════════════════════════════════
+        function render() {
+            const posts = filtered();
+            const page = pagePosts(posts);
+            const grid = document.getElementById('postsGrid');
+            const noRes = document.getElementById('noResults');
+
+            document.getElementById('postCount').innerHTML = `<strong>${posts.length}</strong> artikel`;
+
+            if (posts.length === 0) {
+                grid.innerHTML = '';
+                noRes.style.display = 'block';
+                document.getElementById('paginationWrap').style.display = 'none';
+            } else {
+                noRes.style.display = 'none';
+                const isFeaturedPage = state.page === 1 && state.category === 'all' && !state.query;
+                grid.innerHTML = page.map((p, i) => cardHTML(p, i === 0 && isFeaturedPage)).join('');
+                renderPagination(posts);
+                grid.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+                grid.querySelectorAll('.post-cat[data-cat]').forEach(el =>
+                    el.addEventListener('click', () => filterCat(el.dataset.cat))
+                );
+            }
+
+            // Update tab counts
+            document.getElementById('countAll').textContent = countCat('all');
+            document.getElementById('countTips').textContent = countCat('tips-hadiah');
+            document.getElementById('countInspirasi').textContent = countCat('inspirasi');
+            document.getElementById('countKenangan').textContent = countCat('kenangan');
+            document.getElementById('countPanduan').textContent = countCat('panduan');
+        }
+
+        // ══════════════════════════════════════════════
+        // FILTER
+        // ══════════════════════════════════════════════
+        function filterCat(cat) {
+            state.category = cat; state.page = 1;
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
+            render();
+        }
+
+        // ══════════════════════════════════════════════
+        // RENDER — Sidebar
+        // ══════════════════════════════════════════════
+        function renderSidebar() {
+            // Popular articles
+            const popular = [...POSTS_DATA].filter(p => p.popular).sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 4);
+            document.getElementById('popularList').innerHTML = popular.map((p, i) => `
+    <div class="popular-item">
+      <div class="popular-num">${i + 1}</div>
+      <div>
+        <a href="blog-post.html?slug=${p.slug}" class="popular-title">${p.title}</a>
+        <div class="popular-meta">${p.date} · ${p.readTime} baca</div>
+      </div>
+    </div>`).join('');
+
+            // Categories
+            const CATS = [
+                { key: 'tips-hadiah', label: 'Tips Hadiah' },
+                { key: 'inspirasi', label: 'Inspirasi' },
+                { key: 'kenangan', label: 'Kenangan' },
+                { key: 'panduan', label: 'Panduan' }
+            ];
+            document.getElementById('catList').innerHTML = CATS.map(c => `
+    <a class="cat-item" href="#" data-cat="${c.key}" role="button" aria-label="Filter ${c.label}">
+      <span class="cat-name">${c.label}</span>
+      <span class="cat-count">${countCat(c.key)}</span>
+    </a>`).join('');
+            document.querySelectorAll('.cat-item[data-cat]').forEach(el =>
+                el.addEventListener('click', e => { e.preventDefault(); filterCat(el.dataset.cat); })
+            );
+
+            // Tags
+            const tags = [...new Set(POSTS_DATA.flatMap(p => p.tags || []))];
+            document.getElementById('tagsCloud').innerHTML = tags.map(t => `
+    <span class="tag-pill" data-tag="${t}">${t}</span>`).join('');
+            document.querySelectorAll('.tag-pill').forEach(el =>
+                el.addEventListener('click', () => {
+                    const q = el.dataset.tag;
+                    document.getElementById('searchInput').value = q;
+                    state.query = q; state.page = 1; render();
+                })
+            );
+        }
+
+        // ══════════════════════════════════════════════
+        // INTERSECTION OBSERVER
+        // ══════════════════════════════════════════════
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+
+        // ══════════════════════════════════════════════
+        // LOAD posts.json THEN INIT
+        // ══════════════════════════════════════════════
+        async function loadPosts() {
+            try {
+                const res = await fetch(POSTS_JSON_URL);
+                if (!res.ok) throw new Error('fetch failed');
+                const data = await res.json();
+                POSTS_DATA = data.posts || [];
+            } catch (e) {
+                // If fetch fails (e.g., opened as local file:// without server),
+                // fall back to inline posts bundled below
+                POSTS_DATA = FALLBACK_POSTS;
+            }
+            initBlog();
+        }
+
+        function initBlog() {
+            renderSidebar();
+            render();
+            document.querySelectorAll('.blog-sidebar .reveal').forEach(el => revealObs.observe(el));
+
+            // URL params
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('cat')) filterCat(params.get('cat'));
+            if (params.get('q')) {
+                const q = params.get('q');
+                document.getElementById('searchInput').value = q;
+                state.query = q; render();
+            }
+        }
+
+        // ══════════════════════════════════════════════
+        // INLINE FALLBACK (same as posts.json, for file:// mode)
+        // ══════════════════════════════════════════════
+        const FALLBACK_POSTS = [
+            { id: 1, slug: "hadiah-ulang-tahun-pacar-yang-berkesan", title: "10 Hadiah Ulang Tahun untuk Pacar yang Tak Mudah Terlupakan", excerpt: "Bukan soal harganya, tapi soal pesannya. Temukan ide hadiah yang bisa membuat si dia menangis haru — dan mengingatmu seumur hidup.", category: "tips-hadiah", categoryLabel: "Tips Hadiah", date: "24 Maret 2025", dateISO: "2025-03-24", readTime: "5 menit", featured: true, image: "https://images.unsplash.com/photo-1513201099705-a9746072231e?w=800&q=80", imageAlt: "Hadiah ulang tahun berkesan", tags: ["ulang tahun", "pacar", "hadiah romantis"], popular: true, views: 4821 },
+            { id: 2, slug: "cara-membuat-kenangan-digital-interaktif", title: "Cara Membuat Kenangan Digital yang Bikin Orang Terharu", excerpt: "Dari foto biasa menjadi pengalaman interaktif yang penuh rasa. Begini formula yang kami pakai untuk setiap Memoreel.", category: "panduan", categoryLabel: "Panduan", date: "18 Maret 2025", dateISO: "2025-03-18", readTime: "7 menit", featured: false, image: "https://images.unsplash.com/photo-1567443024551-f3e3a7b9b43f?w=600&q=80", imageAlt: "Kenangan digital interaktif", tags: ["digital", "kenangan", "kreatif"], popular: true, views: 3210 },
+            { id: 3, slug: "ide-kado-anniversary-pernikahan", title: "Ide Kado Anniversary yang Lebih Bermakna dari Bunga & Cokelat", excerpt: "Rayakan tahun pernikahan dengan sesuatu yang bisa diputar ulang, dilihat lagi, dan dirasakan setiap saat.", category: "inspirasi", categoryLabel: "Inspirasi", date: "10 Maret 2025", dateISO: "2025-03-10", readTime: "4 menit", image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80", imageAlt: "Kado anniversary pernikahan", tags: ["anniversary", "pernikahan", "kado"], popular: false, views: 1890 },
+            { id: 4, slug: "cerita-memoreel-sarah-untuk-ibu", title: "\"Ibu sampai tak bisa bicara\" — Kisah Sarah dan Memoreel untuk Hari Ibu", excerpt: "Sarah memesan Memoreel dua minggu sebelum Hari Ibu. Yang terjadi kemudian membuatnya menghubungi kami lagi — kali ini untuk berterima kasih.", category: "kenangan", categoryLabel: "Kenangan", date: "5 Maret 2025", dateISO: "2025-03-05", readTime: "6 menit", image: "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&q=80", imageAlt: "Kisah pelanggan Memoreel", tags: ["hari ibu", "cerita nyata", "keluarga"], popular: true, views: 2940 },
+            { id: 5, slug: "tips-foto-kenangan-berkualitas", title: "5 Tips Memilih Foto Kenangan agar Hasilnya Memukau", excerpt: "Foto yang baik adalah fondasi Memoreel yang indah. Ini panduan memilih foto terbaik dari tumpukan galerimu.", category: "panduan", categoryLabel: "Panduan", date: "28 Feb 2025", dateISO: "2025-02-28", readTime: "4 menit", image: "https://images.unsplash.com/photo-1510074468668-3f1a07dc4e0f?w=600&q=80", imageAlt: "Tips foto kenangan", tags: ["foto", "tips", "panduan"], popular: false, views: 1540 },
+            { id: 6, slug: "hadiah-wisuda-yang-tidak-biasa", title: "Hadiah Wisuda yang Tidak Biasa — Jauh Lebih Diingat", excerpt: "Bunga layu, boneka berdebu. Tapi kenangan digital tentang perjalanan kuliah? Itu akan diputar ulang di tahun-tahun mendatang.", category: "inspirasi", categoryLabel: "Inspirasi", date: "20 Feb 2025", dateISO: "2025-02-20", readTime: "5 menit", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80", imageAlt: "Hadiah wisuda", tags: ["wisuda", "hadiah", "kuliah"], popular: false, views: 2100 },
+            { id: 7, slug: "psikologi-di-balik-hadiah-berkesan", title: "Psikologi di Balik Hadiah yang Benar-Benar Berkesan", excerpt: "Mengapa uang dan barang mahal seringkali kalah dari sehelai tulisan tangan? Sains menjelaskannya.", category: "tips-hadiah", categoryLabel: "Tips Hadiah", date: "12 Feb 2025", dateISO: "2025-02-12", readTime: "8 menit", image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=80", imageAlt: "Psikologi hadiah", tags: ["psikologi", "hadiah", "tips"], popular: false, views: 1320 },
+            { id: 8, slug: "kado-ulang-tahun-sahabat-long-distance", title: "Kado untuk Sahabat yang Berjauhan — Cara Memeluk dari Jauh", excerpt: "Jarak ribuan kilometer tak menghalangi rasa sayang. Ini cara mengirimkan pelukan virtual terbaik yang pernah ada.", category: "inspirasi", categoryLabel: "Inspirasi", date: "5 Feb 2025", dateISO: "2025-02-05", readTime: "5 menit", image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80", imageAlt: "Hadiah untuk sahabat jarak jauh", tags: ["sahabat", "LDR", "hadiah digital"], popular: false, views: 1750 },
+            { id: 9, slug: "cerita-rafi-kejutan-untuk-ayah", title: "Rafi Membuat Ayahnya Menangis untuk Pertama Kali", excerpt: "\"Ayah selalu bilang tidak suka dipeluk. Tapi waktu dia lihat Memoreel itu, matanya langsung berkaca-kaca.\"", category: "kenangan", categoryLabel: "Kenangan", date: "28 Jan 2025", dateISO: "2025-01-28", readTime: "5 menit", image: "https://images.unsplash.com/photo-1484665754804-74b091211472?w=600&q=80", imageAlt: "Cerita pelanggan Memoreel", tags: ["ayah", "cerita nyata", "keluarga"], popular: false, views: 2300 },
+            { id: 10, slug: "panduan-menulis-pesan-di-memoreel", title: "Panduan Menulis Pesan yang Akan Diingat Selamanya", excerpt: "Kata-kata yang tepat bisa lebih berharga dari hadiah apa pun. Begini cara merangkainya tanpa harus jadi penulis.", category: "panduan", categoryLabel: "Panduan", date: "15 Jan 2025", dateISO: "2025-01-15", readTime: "6 menit", image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80", imageAlt: "Menulis pesan berkesan", tags: ["tulisan", "panduan", "pesan"], popular: false, views: 1180 },
+            { id: 11, slug: "hadiah-lebaran-yang-berbeda", title: "Hadiah Lebaran yang Beda dari Biasanya — Bukan Hampers Lagi", excerpt: "Lebaran adalah momen reuni. Abadikan tahun ini dengan sesuatu yang bisa diputar ulang bersama keluarga.", category: "tips-hadiah", categoryLabel: "Tips Hadiah", date: "8 Jan 2025", dateISO: "2025-01-08", readTime: "4 menit", image: "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=600&q=80", imageAlt: "Hadiah lebaran", tags: ["lebaran", "keluarga", "hadiah"], popular: false, views: 980 },
+            { id: 12, slug: "apa-itu-memoreel-penjelasan-lengkap", title: "Apa Itu Memoreel? Penjelasan Lengkap untuk yang Baru Tahu", excerpt: "Dari konsep sampai cara pesan, semua dijawab di sini. Cocok untuk kamu yang baru pertama kali dengar tentang Memoreel.", category: "panduan", categoryLabel: "Panduan", date: "2 Jan 2025", dateISO: "2025-01-02", readTime: "9 menit", image: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=600&q=80", imageAlt: "Apa itu Memoreel", tags: ["panduan", "memoreel", "cara order"], popular: false, views: 3500 }
+        ];
+
+        // ══════════════════════════════════════════════
+        // DOM READY
+        // ══════════════════════════════════════════════
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 50), { passive: true });
+
+            // Hamburger
+            document.getElementById('hamburger').onclick = () => document.getElementById('mobileOverlay').classList.add('open');
+            document.getElementById('mobileClose').onclick = () => document.getElementById('mobileOverlay').classList.remove('open');
+
+            // Filter tabs
+            document.querySelectorAll('.filter-tab').forEach(tab =>
+                tab.addEventListener('click', () => filterCat(tab.dataset.cat))
+            );
+
+            // Search with debounce
+            let timer;
+            document.getElementById('searchInput').addEventListener('input', e => {
+                clearTimeout(timer);
+                timer = setTimeout(() => { state.query = e.target.value.trim(); state.page = 1; render(); }, 280);
+            });
+
+            // Newsletter
+            document.getElementById('nlBtn').addEventListener('click', () => {
+                const email = document.getElementById('nlEmail').value.trim();
+                if (!email || !email.includes('@')) { alert('Masukkan alamat email yang valid.'); return; }
+                const btn = document.getElementById('nlBtn');
+                btn.textContent = '✓ Berhasil! Terima kasih 🎉';
+                btn.style.background = 'var(--sage)';
+                document.getElementById('nlEmail').value = '';
+            });
+
+            // Load posts from JSON (or fallback)
+            loadPosts();
+        });
+    </script>
+</body>
+
+</html>

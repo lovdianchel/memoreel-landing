@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO — populated dynamically by JS from POSTS_DATA -->
+    <title id="meta-title">Blog Memoreel</title>
+    <meta name="description" id="meta-desc" content="">
+    <meta name="author" content="Memoreel">
+    <link rel="canonical" id="meta-canonical" href="https://memoreel.id/blog-post.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Memoreel">
+    <meta property="og:title" id="og-title" content="">
+    <meta property="og:description" id="og-desc" content="">
+    <meta property="og:image" id="og-image" content="">
+    <meta property="og:url" id="og-url" content="">
+    <meta property="article:published_time" id="og-date" content="">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="tw-title" content="">
+    <meta name="twitter:description" id="tw-desc" content="">
+    <meta name="twitter:image" id="tw-image" content="">
+
+    <!-- Structured Data — injected by JS -->
+    <script id="ld-json" type="application/ld+json"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --ivory: #FDFAF5;
+            --warm-white: #FFF8EE;
+            --parchment: #F2EBD9;
+            --dark: #1E1A14;
+            --brown: #3D2E1E;
+            --rose: #C4614A;
+            --rose-light: #F0C4B8;
+            --rose-pale: #FDF0EC;
+            --gold: #C9962A;
+            --gold-pale: #FBF4E3;
+            --sage: #6B7B5E;
+            --sage-pale: #EEF2EB;
+            --muted: #8A7A6A;
+            --border: #E2D8CC;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--ivory);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Reading progress bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--rose);
+            width: 0%;
+            z-index: 200;
+            transition: width 0.1s linear;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 56px;
+            background: rgba(253, 250, 245, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        nav.scrolled {
+            border-bottom-color: var(--border);
+        }
+
+        .nav-logo {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 21px;
+            color: var(--rose);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--rose);
+        }
+
+        .nav-btn {
+            background: var(--rose);
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            padding: 10px 24px;
+            border: none;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            background: #B05540;
+            transform: translateY(-1px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--brown);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--ivory);
+            z-index: 99;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+        }
+
+        .mobile-overlay.open {
+            display: flex;
+        }
+
+        .mobile-overlay a {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: var(--brown);
+            text-decoration: none;
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            font-size: 24px;
+            color: var(--rose);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* POST LAYOUT */
+        .post-wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 100px 56px 80px;
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 72px;
+            align-items: start;
+        }
+
+        /* ARTICLE */
+        article {}
+
+        .post-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .post-breadcrumb a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .post-breadcrumb a:hover {
+            color: var(--rose);
+        }
+
+        .post-header-cat {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--rose);
+            padding: 4px 10px;
+            border: 1px solid var(--rose-light);
+            border-radius: 2px;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .post-header-cat:hover {
+            background: var(--rose-pale);
+        }
+
+        h1.post-title-main {
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            font-size: clamp(28px, 3.6vw, 46px);
+            line-height: 1.2;
+            color: var(--brown);
+            margin-bottom: 20px;
+        }
+
+        .post-header-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .meta-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--rose-pale);
+            border: 2px solid var(--rose-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .author-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown);
+        }
+
+        .meta-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+
+        .meta-date,
+        .meta-read {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* Share bar */
+        .share-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .share-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            background: var(--ivory);
+            font-family: 'Nunito', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--muted);
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .share-btn:hover {
+            border-color: var(--rose);
+            color: var(--rose);
+        }
+
+        /* Hero image */
+        .post-hero-img {
+            width: 100%;
+            max-height: 440px;
+            object-fit: cover;
+            display: block;
+            margin: 28px 0 40px;
+            border-radius: 2px;
+        }
+
+        .post-img-caption {
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+            font-style: italic;
+            margin-top: -32px;
+            margin-bottom: 36px;
+        }
+
+        /* Article body */
+        .post-body {
+            font-size: 17px;
+            line-height: 1.85;
+            color: #3D3428;
+            font-weight: 300;
+        }
+
+        .post-body p {
+            margin-bottom: 24px;
+        }
+
+        .post-body h2 {
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            font-size: 26px;
+            color: var(--brown);
+            margin: 40px 0 16px;
+            line-height: 1.3;
+        }
+
+        .post-body h3 {
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            font-size: 20px;
+            color: var(--brown);
+            margin: 32px 0 12px;
+        }
+
+        .post-body ul,
+        .post-body ol {
+            padding-left: 0;
+            margin-bottom: 24px;
+            list-style: none;
+        }
+
+        .post-body ul li,
+        .post-body ol li {
+            padding: 8px 0 8px 24px;
+            position: relative;
+            font-size: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .post-body ul li::before {
+            content: '✦';
+            color: var(--rose);
+            position: absolute;
+            left: 0;
+            font-size: 10px;
+            top: 12px;
+        }
+
+        .post-body ol {
+            counter-reset: ol-counter;
+        }
+
+        .post-body ol li::before {
+            counter-increment: ol-counter;
+            content: counter(ol-counter);
+            position: absolute;
+            left: 0;
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 18px;
+            color: var(--rose);
+            top: 6px;
+        }
+
+        .post-body blockquote {
+            border-left: 3px solid var(--rose);
+            margin: 32px 0;
+            padding: 20px 24px;
+            background: var(--rose-pale);
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 19px;
+            color: var(--brown);
+            line-height: 1.6;
+        }
+
+        .post-body strong {
+            font-weight: 700;
+            color: var(--brown);
+        }
+
+        .post-body a {
+            color: var(--rose);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .post-body .highlight-box {
+            background: var(--gold-pale);
+            border: 1px solid rgba(201, 150, 42, 0.3);
+            padding: 20px 24px;
+            margin: 28px 0;
+            border-radius: 2px;
+        }
+
+        .post-body .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        /* Tags */
+        .post-tags {
+            margin-top: 40px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .tags-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            padding: 5px 12px;
+            border: 1px solid var(--border);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--muted);
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        .tag-pill:hover {
+            border-color: var(--rose);
+            color: var(--rose);
+        }
+
+        /* CTA box */
+        .post-cta {
+            margin-top: 48px;
+            background: var(--rose);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .post-cta-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+        }
+
+        .post-cta h3 {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 26px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .post-cta p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+        }
+
+        .post-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--rose);
+            font-family: 'Nunito', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 13px 32px;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .post-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Related posts */
+        .related-section {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .related-title {
+            font-family: 'Lora', serif;
+            font-size: 22px;
+            color: var(--brown);
+            margin-bottom: 28px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .related-card {
+            border: 1px solid var(--border);
+            transition: transform 0.2s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .related-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-body {
+            padding: 18px;
+        }
+
+        .related-cat {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: 8px;
+        }
+
+        .related-card-title {
+            font-family: 'Lora', serif;
+            font-size: 15px;
+            color: var(--brown);
+            text-decoration: none;
+            line-height: 1.4;
+            display: block;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .related-card-title:hover {
+            color: var(--rose);
+        }
+
+        /* STICKY SIDEBAR */
+        .post-sidebar {
+            position: sticky;
+            top: 88px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .sidebar-widget-title {
+            font-family: 'Lora', serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--brown);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--rose-light);
+        }
+
+        /* TOC */
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .toc-item a {
+            font-size: 13px;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 6px 0 6px 12px;
+            display: block;
+            border-left: 2px solid var(--border);
+            transition: all 0.2s;
+            line-height: 1.4;
+        }
+
+        .toc-item a:hover,
+        .toc-item a.active {
+            color: var(--rose);
+            border-color: var(--rose);
+        }
+
+        /* Mini newsletter */
+        .sidebar-nl-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            background: var(--ivory);
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            color: var(--dark);
+            border-radius: 2px;
+            outline: none;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-nl-input:focus {
+            border-color: var(--rose);
+        }
+
+        .sidebar-nl-input::placeholder {
+            color: var(--muted);
+        }
+
+        .sidebar-nl-btn {
+            width: 100%;
+            background: var(--rose);
+            color: white;
+            border: none;
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 10px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .sidebar-nl-btn:hover {
+            background: #B05540;
+        }
+
+        /* Sticky CTA Mobile */
+        .sticky-mobile-cta {
+            display: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: rgba(253, 250, 245, 0.7);
+            padding: 56px 56px 32px;
+        }
+
+        .footer-row {
+            max-width: 1080px;
+            margin: 0 auto 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .footer-logo {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--rose);
+            margin-bottom: 8px;
+        }
+
+        .footer-tagline {
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: rgba(253, 250, 245, 0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--rose);
+        }
+
+        .footer-copy {
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.35;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        /* 404 state */
+        .not-found {
+            text-align: center;
+            padding: 120px 24px;
+        }
+
+        .not-found h1 {
+            font-family: 'Lora', serif;
+            font-size: 36px;
+            color: var(--brown);
+            margin-bottom: 14px;
+        }
+
+        .not-found p {
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .not-found a {
+            color: var(--rose);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .post-wrap {
+                grid-template-columns: 1fr;
+                padding: 80px 24px 60px;
+            }
+
+            .post-sidebar {
+                display: none;
+            }
+
+            .sticky-mobile-cta {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 50;
+                background: var(--rose);
+                padding: 14px 24px;
+                text-align: center;
+            }
+
+            .sticky-mobile-cta a {
+                color: white;
+                font-weight: 700;
+                font-size: 14px;
+                text-decoration: none;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                padding: 16px 24px;
+            }
+
+            .nav-links,
+            .nav-btn {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            footer {
+                padding: 40px 24px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <button class="mobile-close" id="mobileClose">✕</button>
+        <a href="index.html">Beranda</a>
+        <a href="index.html#how">Cara Kerja</a>
+        <a href="index.html#packages">Paket</a>
+        <a href="blog.html" style="color:var(--rose)">Blog</a>
+        <a href="index.html#faq">FAQ</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">Memoreel</a>
+        <ul class="nav-links">
+            <li><a href="index.html#how">Cara Kerja</a></li>
+            <li><a href="index.html#packages">Paket</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Memoreel%2C%20saya%20ingin%20memesan." class="nav-btn"
+            target="_blank">Pesan Sekarang</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+
+    <!-- MAIN CONTENT — injected by JS -->
+    <div id="app"></div>
+
+    <!-- STICKY MOBILE CTA -->
+    <div class="sticky-mobile-cta">
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Memoreel%2C%20saya%20ingin%20memesan." target="_blank">💬 Pesan
+            via WhatsApp</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-row">
+            <div>
+                <div class="footer-logo">Memoreel</div>
+                <div class="footer-tagline">Hadiah yang dirasakan.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">TikTok</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <p class="footer-copy">© 2025 Memoreel · Surabaya, Indonesia</p>
+    </footer>
+
+    <script>
+        // ══════════════════════════════════════════════
+        // LOAD from posts.json (single source of truth)
+        // ══════════════════════════════════════════════
+        let POSTS_DATA = [];
+
+        async function loadAndRender() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+
+            try {
+                const res = await fetch('./posts.json');
+                if (!res.ok) throw new Error('fetch failed');
+                const data = await res.json();
+                POSTS_DATA = data.posts || [];
+            } catch (e) {
+                POSTS_DATA = [];
+            }
+
+            const post = POSTS_DATA.find(p => p.slug === slug);
+            if (post) {
+                populateSEO(post);
+                renderPost(post);
+            } else {
+                document.getElementById('meta-title').textContent = 'Artikel Tidak Ditemukan — Blog Memoreel';
+                renderNotFound();
+            }
+        }
+
+        // ══════════════════════════════════════════════
+        // SEO POPULATION
+        // ══════════════════════════════════════════════
+        function populateSEO(post) {
+
+            const url = `https://memoreel.id/blog/${post.slug}`;
+            document.getElementById('meta-title').textContent = `${post.title} — Blog Memoreel`;
+            document.getElementById('meta-desc').content = post.excerpt;
+            document.getElementById('meta-canonical').href = url;
+            document.getElementById('og-title').content = post.title;
+            document.getElementById('og-desc').content = post.excerpt;
+            document.getElementById('og-image').content = post.image;
+            document.getElementById('og-url').content = url;
+            document.getElementById('og-date').content = post.dateISO;
+            document.getElementById('tw-title').content = post.title;
+            document.getElementById('tw-desc').content = post.excerpt;
+            document.getElementById('tw-image').content = post.image;
+
+            // Article structured data
+            const ld = {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": post.title,
+                "description": post.excerpt,
+                "image": post.image,
+                "datePublished": post.dateISO,
+                "author": { "@type": "Organization", "name": "Memoreel" },
+                "publisher": {
+                    "@type": "Organization", "name": "Memoreel",
+                    "logo": { "@type": "ImageObject", "url": "https://memoreel.id/logo.png" }
+                },
+                "url": url,
+                "keywords": post.tags.join(', ')
+            };
+            document.getElementById('ld-json').textContent = JSON.stringify(ld, null, 2);
+
+            // Breadcrumb
+            const ldBc = {
+                "@context": "https://schema.org", "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://memoreel.id/" },
+                    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://memoreel.id/blog" },
+                    { "@type": "ListItem", "position": 3, "name": post.title, "item": url }
+                ]
+            };
+            const ldBcScript = document.createElement('script');
+            ldBcScript.type = 'application/ld+json';
+            ldBcScript.textContent = JSON.stringify(ldBc);
+            document.head.appendChild(ldBcScript);
+        }
+
+        // ══════════════════════════════════════════════
+        // TABLE OF CONTENTS
+        // ══════════════════════════════════════════════
+        function buildTOC(contentHTML) {
+            const temp = document.createElement('div');
+            temp.innerHTML = contentHTML;
+            const headings = [...temp.querySelectorAll('h2')];
+            if (headings.length === 0) return '';
+            return `<ul class="toc-list">` + headings.map(h => `
+    <li class="toc-item"><a href="#${h.id}">${h.textContent}</a></li>`).join('') + `</ul>`;
+        }
+
+        // ══════════════════════════════════════════════
+        // RELATED POSTS
+        // ══════════════════════════════════════════════
+        function getRelated(post) {
+            return POSTS_DATA.filter(p => p.id !== post.id && (p.category === post.category || p.tags.some(t => post.tags.includes(t)))).slice(0, 2);
+        }
+
+        // ══════════════════════════════════════════════
+        // RENDER
+        // ══════════════════════════════════════════════
+        function renderPost(post) {
+            const related = getRelated(post);
+            const toc = buildTOC(post.content);
+            const shareUrl = encodeURIComponent(`https://memoreel.id/blog/${post.slug}`);
+            const shareTitle = encodeURIComponent(post.title);
+
+            document.getElementById('app').innerHTML = `
+    <div class="post-wrap">
+      <article>
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a> <span>›</span>
+          <a href="blog.html">Blog</a> <span>›</span>
+          <span style="color:var(--rose)">${post.categoryLabel}</span>
+        </nav>
+
+        <a href="blog.html?cat=${post.category}" class="post-header-cat">${post.categoryLabel}</a>
+
+        <h1 class="post-title-main">${post.title}</h1>
+
+        <div class="post-header-meta">
+          <div class="meta-author">
+            <div class="author-avatar">✍</div>
+            <div>
+              <div class="author-name">Tim Memoreel</div>
+              <div style="font-size:11px;color:var(--muted)">Editor</div>
+            </div>
+          </div>
+          <span class="meta-dot"></span>
+          <time class="meta-date" datetime="${post.dateISO}">${post.date}</time>
+          <span class="meta-dot"></span>
+          <span class="meta-read">⏱ ${post.readTime} baca</span>
+          <span class="meta-dot"></span>
+          <span class="meta-read">👁 ${post.views.toLocaleString('id-ID')} kali dibaca</span>
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Bagikan:</span>
+          <a class="share-btn" href="https://wa.me/?text=${shareTitle}%20${shareUrl}" target="_blank" rel="noopener" aria-label="Bagikan ke WhatsApp">💬 WhatsApp</a>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}" target="_blank" rel="noopener" aria-label="Bagikan ke Twitter">𝕏 Twitter</a>
+          <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener" aria-label="Bagikan ke Facebook">Facebook</a>
+          <button class="share-btn" id="copyLinkBtn" aria-label="Salin tautan">🔗 Salin Tautan</button>
+        </div>
+
+        <img src="${post.image}" alt="${post.imageAlt}" class="post-hero-img" width="1200" height="440" loading="eager">
+        <p class="post-img-caption">${post.imageAlt}</p>
+
+        <div class="post-body">${post.content}</div>
+
+        <div class="post-tags">
+          <span class="tags-label">Tags:</span>
+          ${post.tags.map(t => `<a href="blog.html?q=${encodeURIComponent(t)}" class="tag-pill">${t}</a>`).join('')}
+        </div>
+
+        <div class="post-cta">
+          <div class="post-cta-label">Siap membuat yang spesial?</div>
+          <h3>Jadikan kenangan ini nyata</h3>
+          <p>Ceritakan momen terbaik kalian — kami yang ubah jadi pengalaman tak terlupakan.</p>
+          <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Memoreel%2C%20saya%20ingin%20memesan." class="post-cta-btn" target="_blank">💬 Chat WhatsApp Sekarang</a>
+        </div>
+
+        ${related.length > 0 ? `
+        <div class="related-section">
+          <h2 class="related-title">Artikel Terkait</h2>
+          <div class="related-grid">
+            ${related.map(r => `
+              <a href="blog-post.html?slug=${r.slug}" class="related-card" style="text-decoration:none">
+                <img src="${r.image}" alt="${r.imageAlt}" class="related-img" loading="lazy">
+                <div class="related-body">
+                  <div class="related-cat">${r.categoryLabel}</div>
+                  <span class="related-card-title">${r.title}</span>
+                </div>
+              </a>`).join('')}
+          </div>
+        </div>` : ''}
+      </article>
+
+      <aside class="post-sidebar" aria-label="Sidebar Artikel">
+        ${toc ? `<div class="sidebar-widget"><div class="sidebar-widget-title">Daftar Isi</div>${toc}</div>` : ''}
+        <div class="sidebar-widget">
+          <div class="sidebar-widget-title">💌 Dapatkan Inspirasi</div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.6">Tip hadiah berkesan & promo Memoreel tiap minggu.</p>
+          <input type="email" class="sidebar-nl-input" id="sidebarEmail" placeholder="emailmu@gmail.com" aria-label="Email newsletter">
+          <button class="sidebar-nl-btn" id="sidebarNlBtn">Berlangganan</button>
+        </div>
+        <div class="sidebar-widget">
+          <div class="sidebar-widget-title">💬 Pesan Sekarang</div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.6">Biasanya kami balas dalam 30 menit.</p>
+          <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Memoreel%2C%20saya%20ingin%20memesan." target="_blank" style="display:block;background:var(--rose);color:white;text-align:center;padding:11px;font-size:13px;font-weight:700;text-decoration:none;border-radius:2px;">Mulai di WhatsApp →</a>
+        </div>
+      </aside>
+    </div>`;
+
+            // TOC active on scroll
+            if (toc) {
+                const tocLinks = document.querySelectorAll('.toc-item a');
+                const headings = document.querySelectorAll('.post-body h2');
+                const tocObs = new IntersectionObserver(entries => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            tocLinks.forEach(l => l.classList.remove('active'));
+                            const active = document.querySelector(`.toc-item a[href="#${e.target.id}"]`);
+                            if (active) active.classList.add('active');
+                        }
+                    });
+                }, { rootMargin: '-20% 0px -70% 0px' });
+                headings.forEach(h => tocObs.observe(h));
+            }
+
+            // Copy link
+            document.getElementById('copyLinkBtn').addEventListener('click', () => {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    const btn = document.getElementById('copyLinkBtn');
+                    btn.textContent = '✓ Tersalin!';
+                    setTimeout(() => btn.textContent = '🔗 Salin Tautan', 2000);
+                });
+            });
+
+            // Sidebar newsletter
+            document.getElementById('sidebarNlBtn').addEventListener('click', () => {
+                const email = document.getElementById('sidebarEmail').value.trim();
+                if (!email || !email.includes('@')) { alert('Masukkan email yang valid.'); return; }
+                document.getElementById('sidebarNlBtn').textContent = '✓ Berhasil!';
+                document.getElementById('sidebarNlBtn').style.background = 'var(--sage)';
+                document.getElementById('sidebarEmail').value = '';
+            });
+        }
+
+        function renderNotFound() {
+            document.getElementById('app').innerHTML = `
+    <div class="not-found">
+      <p style="font-size:48px;margin-bottom:16px">🔍</p>
+      <h1>Artikel tidak ditemukan</h1>
+      <p>Mungkin artikel ini sudah dipindahkan atau URL-nya salah.</p>
+      <a href="blog.html">← Kembali ke Blog</a>
+    </div>`;
+        }
+
+        // ══════════════════════════════════════════════
+        // READING PROGRESS
+        // ══════════════════════════════════════════════
+        function initReadingProgress() {
+            const bar = document.getElementById('progress-bar');
+            window.addEventListener('scroll', () => {
+                const el = document.getElementById('app');
+                if (!el) return;
+                const total = el.scrollHeight - window.innerHeight;
+                const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+                bar.style.width = Math.min(pct, 100) + '%';
+            }, { passive: true });
+        }
+
+        // ══════════════════════════════════════════════
+        // INIT
+        // ══════════════════════════════════════════════
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 50), { passive: true });
+            document.getElementById('hamburger').onclick = () => document.getElementById('mobileOverlay').classList.add('open');
+            document.getElementById('mobileClose').onclick = () => document.getElementById('mobileOverlay').classList.remove('open');
+
+            initReadingProgress();
+
+            // Load posts.json then find & render the post
+            loadAndRender();
+        });
+
+    </script>
+</body>
+
+</html>
