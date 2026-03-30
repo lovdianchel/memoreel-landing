@@ -1310,6 +1310,8 @@
         // ══════════════════════════════════════════════
         function filtered() {
             let posts = [...POSTS_DATA];
+            // Sort by date descending — artikel terbaru selalu di depan
+            posts.sort((a, b) => new Date(b.dateISO) - new Date(a.dateISO));
             if (state.category !== 'all') posts = posts.filter(p => p.category === state.category);
             if (state.query) {
                 const q = state.query.toLowerCase();
@@ -1321,6 +1323,7 @@
             }
             return posts;
         }
+
 
         function totalPages(posts) { return Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE)); }
         function pagePosts(posts) { const s = (state.page - 1) * POSTS_PER_PAGE; return posts.slice(s, s + POSTS_PER_PAGE); }
